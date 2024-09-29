@@ -1,0 +1,12 @@
+<div class="file-upload-container">
+    <h2 class="mb-4">Upload a File</h2>
+   
+    <input type="file" (change)="onFileSelected($event)"  id="fileInput" />
+    <button (click)="onUpload()" class="upload-button mt-4">Upload</button>
+
+     <!-- Warning Message -->
+     <div *ngIf="warningMessage" class="alert alert-warning mt-4">
+      {{warningMessage}}
+     </div>
+  
+  </div>

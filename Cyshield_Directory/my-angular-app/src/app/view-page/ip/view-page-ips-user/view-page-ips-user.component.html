@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#IpId</th>
+        <th scope="col">IpAddress</th>
+        <th scope="col">SubnetId</th>
+        <th scope="col">CreatedBy</th>
+        <th scope="col">CreatedAt</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ip of ips">
+        <th scope="row">{{ ip.IpId }}</th>
+        <td>{{ ip.IpAddress }}</td>
+        <td>{{ ip.SubnetId }}</td>
+        <td>{{ ip.CreatedBy }}</td>
+        <td>{{ ip.CreatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+            <button class="btn btn-outline-primary me-2" (click)="editIp(ip)">Edit</button>
+            <button class="btn btn-outline-danger" (click)="deleteIp(ip.IpId)">Delete</button>
+        </td>
+      </tr>
+
+      
+    </tbody>
+  </table>

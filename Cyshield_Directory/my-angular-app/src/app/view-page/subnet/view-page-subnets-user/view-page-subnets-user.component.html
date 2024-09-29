@@ -1,0 +1,33 @@
+ <!-- Display actions based on token existence -->
+ <div *ngIf="!token" class="alert alert-warning text-center">
+  <p>No active session found. Please <strong>log in</strong> to access your dashboard.</p>
+  <a class="btn btn-primary mt-2" routerLink="/login">Login</a>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#SubnetId</th>
+        <th scope="col">SubnetName</th>
+        <th scope="col">SubnetAddress</th>
+        <th scope="col">Createdby</th>
+        <th scope="col">CreatedAt</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subnet of subnets" >
+        <th scope="row">{{ subnet.SubnetId }}</th>
+        <td>{{ subnet.SubnetName }}</td>
+        <td>{{ subnet.SubnetAddress }}</td>
+        <td>{{ subnet.CreatedBy }}</td>
+        <td>{{ subnet.CreatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>
+            <button class="btn btn-outline-primary me-2" (click)="editSubnet(subnet)">Edit</button>
+            <button class="btn btn-outline-danger" (click)="deleteSubnet(subnet.SubnetId)">Delete</button>
+        </td>
+      </tr>
+
+      
+    </tbody>
+  </table>

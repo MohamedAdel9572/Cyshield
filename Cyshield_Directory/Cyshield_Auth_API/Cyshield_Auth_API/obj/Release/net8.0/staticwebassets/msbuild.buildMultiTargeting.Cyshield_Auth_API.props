@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Cyshield_Auth_API.props" />
+</Project>
